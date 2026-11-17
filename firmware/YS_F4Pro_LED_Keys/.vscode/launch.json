@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "LED + Keys - HardStone DAP",
+      "type": "cortex-debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/Debug/YS_F4Pro_LED_Keys.elf",
+      "servertype": "openocd",
+      "device": "STM32F407IGT6",
+      "interface": "swd",
+      "configFiles": ["interface/cmsis-dap.cfg", "target/stm32f4x.cfg"],
+      "openOCDLaunchCommands": ["adapter speed 1000"],
+      "runToEntryPoint": "main",
+      "preLaunchTask": "LED: Build"
+    }
+  ]
+}

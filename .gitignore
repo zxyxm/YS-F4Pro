@@ -1,0 +1,10 @@
+# Local reference extraction, downloads and validation artifacts
+/tmp/
+# Generated build outputs
+/firmware/**/build/
+# Python runtime caches
+__pycache__/
+*.pyc
+# Local firmware backups, packaged applications and device test logs
+/backups/
+/output/
