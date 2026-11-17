@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Motor + LED v5 - HardStone DAP (OpenOCD)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/firmware/YS_F4Pro_Combined",
+      "executable": "${workspaceFolder}/firmware/YS_F4Pro_Combined/build/Debug/YS_F4Pro_Combined.elf",
+      "servertype": "openocd",
+      "device": "STM32F407IGT6",
+      "interface": "swd",
+      "configFiles": ["interface/cmsis-dap.cfg", "target/stm32f4x.cfg"],
+      "openOCDLaunchCommands": ["adapter speed 1000"],
+      "runToEntryPoint": "main",
+      "preLaunchTask": "Combined: Build"
+    }
+  ]
+}

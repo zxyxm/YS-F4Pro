@@ -1,4 +1,38 @@
-# YS-F4Pro LED 串口控制例程
+# YS-F4Pro 电机 + LED 控制
+
+当前推荐：**v5 合并版**，一个上位机、一个串口连接、一套固件，同时控制四轴电机和三灯流水。每转 3200 脉冲，最高 200 rpm，加减速度上限 400 rpm/s。
+
+| 当前源码 | 内容 |
+| --- | --- |
+| [combined_controller](combined_controller/) | 统一 Python/Tkinter 上位机：电机与 LED 页签、共享串口、离线演示、测试 |
+| [firmware/YS_F4Pro_Combined](firmware/YS_F4Pro_Combined/) | 合并 HAL 固件：四轴位置/速度模式、PUL 频率、LED 流水及按键 |
+
+[合并版使用与开发笔记](docs/电机LED合并版使用与开发笔记.md)
+
+```powershell
+# 源码运行（Python 3，需包含 Tkinter）
+python -m pip install -r combined_controller/requirements.txt
+python combined_controller/app.py --demo
+python combined_controller/app.py --port COM4
+
+# 本机 STM32Tools 工具链：编译、下载合并固件
+powershell -ExecutionPolicy Bypass -File firmware/YS_F4Pro_Combined/build.ps1 -Flash
+
+# 打包 Windows EXE，需另外安装 PyInstaller
+powershell -ExecutionPolicy Bypass -File scripts/build-combined-controller.ps1
+```
+
+打包后双击“启动电机LED上位机.cmd”。COM 编号按设备管理器选择。根目录 VS Code Ctrl+Shift+B / F5 目标为合并工程，本机工具路径需按其他电脑安装位置调整。
+
+切换页签不会停止运动。实体按键仅控制 LED，电机通过上位机操作；KEY2 不再是电机停止键。LED1 不再被心跳覆盖。关闭上位机会请求电机减速停止，LED 保持状态。LED 恢复默认不会复位或停止电机。
+
+合并版已于 2026-11-17 通过 20 项单元测试、界面测试、PUL 保持低电平的四轴高负载板内测试、正式固件下载校验和 COM4 电机参数/LED 操作隔离验证。未启动实际电机，带载最高速度及实体按键需人工验证。光电配置尚未实现真实限位或回原点保护。
+
+历史独立例程保留在 `upper_controller` + `firmware/YS_F4Pro_Stepper`（电机 v4），及 `led_controller` + `firmware/YS_F4Pro_LED_Keys`（LED v1），它们有各自协议和启动脚本。合并版请使用上面的当前入口。EXE、build、缓存和原始 Flash 备份留在本地。
+
+---
+
+# 历史 LED 独立例程说明
 
 STM32F407IGT6 开发板上的三灯流水灯、实体按键和 Python 桌面串口控制。本次整理版本为 2026-11-17，代码对应此前已下载验证的 LED 固件。
 

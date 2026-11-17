@@ -1,0 +1,31 @@
+{
+  "cmake.cmakePath": "C:/Users/ALBERT/AppData/Local/STM32Tools/cmake/cmake-4.4.5-windows-x86_64/bin/cmake.exe",
+  "cmake.sourceDirectory": "${workspaceFolder}/firmware/YS_F4Pro_Combined",
+  "cmake.buildDirectory": "${workspaceFolder}/firmware/YS_F4Pro_Combined/build/Debug",
+  "cmake.configureOnOpen": false,
+  "cmake.generator": "Ninja",
+  "cmake.configureEnvironment": {
+    "PATH": "C:/Users/ALBERT/AppData/Local/STM32Tools/gcc/xpack-arm-none-eabi-gcc-15.2.1-1.1/bin;C:\\Users\\ALBERT\\AppData\\Local\\STM32Tools\\cmake\\cmake-4.4.5-windows-x86_64\\bin;C:\\Users\\ALBERT\\AppData\\Local\\STM32Tools\\ninja;C:\\Users\\ALBERT\\AppData\\Local\\STM32Tools\\openocd\\xpack-openocd-0.12.0-7\\bin;${env:PATH}"
+  },
+  "cmake.buildEnvironment": {
+    "PATH": "C:/Users/ALBERT/AppData/Local/STM32Tools/gcc/xpack-arm-none-eabi-gcc-15.2.1-1.1/bin;C:\\Users\\ALBERT\\AppData\\Local\\STM32Tools\\cmake\\cmake-4.4.5-windows-x86_64\\bin;C:\\Users\\ALBERT\\AppData\\Local\\STM32Tools\\ninja;C:\\Users\\ALBERT\\AppData\\Local\\STM32Tools\\openocd\\xpack-openocd-0.12.0-7\\bin;${env:PATH}"
+  },
+  "cmake.configureSettings": {
+    "CMAKE_MAKE_PROGRAM": "C:/Users/ALBERT/AppData/Local/STM32Tools/ninja/ninja.exe",
+    "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+    "CMAKE_TOOLCHAIN_FILE": "${workspaceFolder}/firmware/YS_F4Pro_Combined/cmake/gcc-arm-none-eabi.cmake"
+  },
+  "C_Cpp.default.compilerPath": "C:/Users/ALBERT/AppData/Local/STM32Tools/gcc/xpack-arm-none-eabi-gcc-15.2.1-1.1/bin/arm-none-eabi-gcc.exe",
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/firmware/YS_F4Pro_Combined/build/Debug/compile_commands.json",
+  "cortex-debug.armToolchainPath": "C:/Users/ALBERT/AppData/Local/STM32Tools/gcc/xpack-arm-none-eabi-gcc-15.2.1-1.1/bin",
+  "cortex-debug.gdbPath": "C:/Users/ALBERT/AppData/Local/STM32Tools/gcc/xpack-arm-none-eabi-gcc-15.2.1-1.1/bin/arm-none-eabi-gdb.exe",
+  "cortex-debug.openocdPath": "C:/Users/ALBERT/AppData/Local/STM32Tools/openocd/xpack-openocd-0.12.0-7/bin/openocd.exe",
+  "terminal.integrated.env.windows": {
+    "PATH": "C:/Users/ALBERT/AppData/Local/STM32Tools/gcc/xpack-arm-none-eabi-gcc-15.2.1-1.1/bin;C:\\Users\\ALBERT\\AppData\\Local\\STM32Tools\\cmake\\cmake-4.4.5-windows-x86_64\\bin;C:\\Users\\ALBERT\\AppData\\Local\\STM32Tools\\ninja;C:\\Users\\ALBERT\\AppData\\Local\\STM32Tools\\openocd\\xpack-openocd-0.12.0-7\\bin;${env:PATH}"
+  },
+  "files.associations": {
+    "*.ioc": "ini",
+    "*.ld": "c",
+    "*.s": "asm"
+  }
+}
